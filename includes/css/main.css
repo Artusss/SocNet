@@ -1,0 +1,451 @@
+/*includes\top_panel.php*/
+body{
+	background-color: #f0f0f0;
+	color: #2b2b2b;
+}
+.top_panel{
+	color: #666;
+	background-color: #ccc;
+}
+.top_panel .logotype{
+	font-size: 40px;
+	display: block;
+	margin-left: 30px;
+	padding: 0;
+	text-align: left;
+}
+.top_panel .user{
+	font-size: 20px;
+	display: block;
+	margin: 15px 0;
+	/*padding: 0 80px;*/
+	text-align: center;
+}
+.top_panel a{
+	color: #666;
+  text-decoration: none;
+  border-bottom: none;
+}
+/*includes\top_panel.php*/
+
+/*includes\left_panel.php*/
+.left_panel ul{
+	margin: 10px 0;
+	padding: 0;
+	list-style-type: none;
+}
+.left_panel li{
+	margin: 0;
+	padding: 0;
+	text-align: left;
+}
+.left_panel li a{
+	display: block;
+	border-radius: 3px;
+  padding: 5px;
+  text-decoration: none;
+  color: #666;
+  background-color: #f0f0f0;
+  border-bottom: none;
+}
+.left_panel li a:hover{
+	background-color: #bed8f5;
+  color: #ffe;
+}
+.left_panel li a .counter{
+	float: right;
+	border-radius: 3px;
+	padding: 0 5px;
+	background-color: #7ba6d4;
+	color: #ffe;
+}
+.left_panel form{
+	display: block;
+}
+.left_panel button{
+	float: left;
+	padding: 5px;
+	text-decoration: none;
+	color: #666;
+	background-color: #f0f0f0;
+	border: none;
+}
+/*includes\left_panel.php*/
+
+/*main_page.php*/
+.main_cont{
+	display: block;
+	margin-top: 10px;
+	padding: 0 0 20px 0;
+	background-color: #fff;
+	border-radius: 10px;
+}
+.user_info ul{
+	color: #2b2b2b;
+	margin: 10px 0;
+	padding: 0;
+	list-style-type: none;
+}
+.user_info ul li{
+	font-size: 25px;
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.user_info em{
+	font-size: 20px;
+	color: #666;
+}
+.user_photo img{
+	padding: 10px;
+	display: block;
+	border-radius: 25px;
+	max-width: 100%;
+}
+.user_about {
+	font-size: 20px;
+	display: block;
+	padding: 10px 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+
+.user_about button{
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin-bottom: 0 15px;
+	text-decoration: none;
+	color: #2b2b2b;
+	border: none;
+}
+/*main_page.php*/
+
+/*friends.php*/
+.friend_list ul{
+	color: #2b2b2b;
+	margin: 10px 0;
+	padding: 0;
+	list-style-type: none;
+}
+.friend_list ul li{
+	font-size: 25px;
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.friend_list em{
+	font-size: 20px;
+	color: #666;
+}
+.friend_list p{
+	font-size: 20px;
+	display: block;
+	padding: 10px 20px 0;
+	margin: 0; 
+	text-decoration: none;
+	border-bottom: none;
+}
+.friend_list a{
+  text-decoration: none;
+  border-bottom: none;
+}
+.friend_list a:hover{
+	color: #2b2b2b;
+}
+/*friends.php*/
+
+/*dialogs.php*/
+.dialogs ul{
+	color: #2b2b2b;
+	margin: 10px;
+	padding: 0;
+	list-style-type: none;
+}
+.dialogs ul li{
+	font-size: 20px;
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.dialogs .create_group{
+	font-size: 20px;
+	display: block;
+	padding: 5px 20px 15px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.dialogs a{
+  text-decoration: none;
+  border-bottom: none;
+}
+.dialogs a:hover{
+	color: #2b2b2b;
+}
+.dialog{
+	background-color: #fff;
+	margin-top: 20px; 
+}
+.dialog .date{
+	float: right;
+}
+.dialog em{
+	font-size: 15px;
+	color: #666;
+	padding: 2.5px;
+}
+.dialog i{
+	float: right;
+	padding: 6px;
+}
+.dialog .counter{
+	float: right;
+	border-radius: 15px;
+	padding: 0 8px;
+	background-color: #7ba6d4;
+	color: #ffe;
+}
+/*dialogs.php*/
+
+/*dialog.php*/
+.room_name{
+	padding: 20px 0 0;
+	font-size: 20px;
+}
+.room_name em{
+	font-size: 15px;
+	color: #666;
+	padding: 5px 10px;
+}
+.send_message{
+  border-radius: 7px;  
+  padding: 10px 10px;
+  border-right: 15px;
+  background-color: #f0f0f0;
+}
+.send_message textarea{
+  border-radius: 7px;
+  width: 100%;
+}
+.send_message button{
+	background-color: #f0f0f0;
+  width: 100%;
+  padding: 0;
+  border: none;
+  
+  font-size: 20px;
+  color: #2b2b2b;
+}
+.message button{
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin-bottom: 0 15px;
+	text-decoration: none;
+	background-color: #fff;
+	color: #2b2b2b;
+	border: none;
+}
+.message em{
+	font-size: 12px;
+	color: #666;
+	padding: 5px 10px;
+}
+.message .date{
+	float: right;
+}
+.message .text{
+	font-size: 20px;
+	word-wrap: break-word;
+}
+.message .status{
+	padding: 6px 10px;
+}
+.message .delete_message{
+	float: right;
+}
+.message .delete_message button{
+	padding: 6px 0;
+	float: right;
+}
+#popup1 a{
+	float: right;
+}
+.add_member{
+	border-radius:5px;
+	text-align: center;
+}
+.add_member a{
+  text-decoration: none;
+  border-bottom: none;
+}
+.add_member a:hover{
+	color: #2b2b2b;
+}
+/*dialog.php*/
+
+/*notices.php*/
+.notices ul{
+	color: #2b2b2b;
+	margin: 10px;
+	padding: 0;
+	list-style-type: none;
+}
+.notices ul li{
+	border-radius: 10px;
+	font-size: 20px;
+	display: block;
+	background-color: #fff;
+	margin-top: 20px;
+	padding: 0 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.notice{
+	font-size: 20px;
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	border-bottom: none;
+}
+.notice .text{
+	padding-bottom: 10px;
+}
+.notice button{
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin-bottom: 0 15px;
+	text-decoration: none;
+	color: #2b2b2b;
+	border: none;
+}
+/*notices.php*/
+
+/*search_friend.php*/
+.founded_users{
+		margin-top: 20px; 
+}
+.founded_users ul{
+	color: #2b2b2b;
+	margin: 10px;
+	padding: 0;
+	list-style-type: none;
+}
+.founded_users ul li{
+	border-radius: 10px;
+	font-size: 20px;
+	display: block;
+	background-color: #fff;
+	margin-top: 20px;
+	padding: 0 20px;
+	text-decoration: none;
+	border-bottom: none;
+}
+.founded_user{
+	font-size: 20px;
+	display: block;
+	padding: 10px 0;
+	text-decoration: none;
+	border-bottom: none;
+}
+.founded_users a{
+  text-decoration: none;
+  border-bottom: none;
+}
+.founded_users a:hover{
+	color: #2b2b2b;
+}
+.founded_user em{
+	font-size: 15px;
+	color: #666;
+	padding: 2.5px;
+}
+.founded_users input{
+	display: block;
+	width: 100%;
+	border-radius: 10px;
+	padding: 0 7px 10px;
+}
+.founded_users button{
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin-bottom: 0 15px;
+	text-decoration: none;
+	color: #2b2b2b;
+	border: none;
+}
+/*search_friend.php*/
+
+/*index.php*/
+.auth_reg{
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+	padding: 0 0 20px 0;
+	background-color: #fff;
+	border-radius: 10px;
+}
+.auth_reg div{
+	padding: 25px 0 10px;
+}
+.auth_reg a{
+	font-size: 20px;
+	border: 1px solid #b3b3b3;
+	border-radius: 10px;
+	background-color: #f0f0f0;
+	margin-top: 20px;
+	padding: 10px 20px;
+	text-decoration: none;
+}
+.auth_reg a:hover{
+	color: #2b2b2b;
+}
+/*index.php*/
+
+/*login.php*/
+.forms{
+	display: block;
+	text-align: left;
+	padding: 20px;
+}
+.forms input{
+	border: 1px solid #b3b3b3;
+	padding: 0 10px 10px;
+	display: inline-block;
+	border-radius: 10px;
+}
+.forms p{
+	margin: 0;
+}
+.forms ul{
+	color: #2b2b2b;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.forms ul li{
+	border-radius: 10px;
+	font-size: 18px;
+	display: block;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	border-bottom: none;
+}
+.forms button{
+	background-color: #f0f0f0;
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin: 15px 0;
+	text-decoration: none;
+	color: #2b2b2b;
+	border: none;
+} 
+.forms .err_message{
+	color: red;
+	margin-bottom: 10px;
+}
+/*login.php*/
+
