@@ -52,22 +52,6 @@ require_once '../includes/top_panel.php';
       </form>
     </div>
     <?php
-    $dialog = ORM::Read('messages',
-     'room_id=? AND room_type=? ORDER BY pubdate DESC LIMIT 50',
-     [$_GET['room_id'], $_GET['room_type']]
-   );
-
-    if($_GET['room_type'] === 'group'){
-     $groups_id = unserialize($_SESSION['logged_user']['groups_id']);
-     foreach ($groups_id as &$v) {
-      if($v[0] == $_GET['room_id']){
-       $v[1] = date('Y-m-d H:i:s');
-       break;
-     }
-   }
-   $_SESSION['logged_user']['groups_id'] = serialize($groups_id);
-   ORM::Update('users', 'groups_id=?', 'id=?', [$_SESSION['logged_user']['groups_id'], $_SESSION['logged_user']['id']]);
- }
 
  foreach($dialog as $v){
   if(($v['readed'] == 0) && ($v['sender'] != $_SESSION['logged_user']['login'])){ 

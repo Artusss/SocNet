@@ -1,15 +1,7 @@
 <?php
 require_once '../includes/model.php';
 
-function login($login='login', $password='password', $method='POST'){ //вход в учетную запись
-	if($method === 'POST'){
-		$login    = $_POST["$login"];
-		$password = $_POST["$password"];
-	}else if($method === 'GET'){
-		$login    = $_GET["$login"];
-		$password = $_GET["$password"];
-	}
-	
+function login($login, $password){ //вход в учетную запись
 	$errors = array();
 	if(trim($login) == ''){
 		$errors[] = 'Введите логин'; 
@@ -33,14 +25,15 @@ function login($login='login', $password='password', $method='POST'){ //вход
 	if(!empty($errors)){
 		return array_shift($errors);
 	}
+	return false;
 }
 $err_message = '';
 if(isset($_POST['doGoLogin'])){
-	if(login() === true){
-		login();
+	if(login($_POST['login'], $_POST['password']) === true){
+		login($_POST['login'], $_POST['password']);
 		header("Location: ../views/main_page.php?id={$_SESSION['logged_user']['id']}");
 		exit();
 	}else{
-		$err_message = login()."<hr>";
+		$err_message = login($_POST['login'], $_POST['password'])."<hr>";
 	}
 }

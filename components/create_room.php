@@ -1,12 +1,8 @@
 <?php
 require_once '../includes/model.php';
 //создает группу
-function createRoom($party, $name='name', $submit='doGoCreateRoom', $method='POST'){
-	if($method === 'POST'){
-		$name  = $_POST["$name"];
-	}else if($method === 'GET'){
-		$name  = $_GET["$name"];
-	}
+function createRoom($party){
+    $name  = $_POST['name'];
 	$errors = array();
 	if(!isset($party)){
 		$errors[] = 'Выберите участников беседы';

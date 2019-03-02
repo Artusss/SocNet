@@ -1,15 +1,8 @@
 <?php 
 require_once '../includes/model.php';
 
-function addMessage($text='text', $method='POST'){ //отправляет сообщение
-    if($method === 'POST'){
-        $text = $_POST["$text"];
-    }else if($method === 'GET'){
-        $text = $_GET["$text"];
-    }
-
+function addMessage($text){ //отправляет сообщение
     $errors = array();
-
     if(trim($text) == ''){
         $errors[] = 'Пустая строка';
     }
@@ -23,6 +16,7 @@ function addMessage($text='text', $method='POST'){ //отправляет соо
         ]);
         return true;
     }
+    return false;
 } 
 function getFriendsNotInGroup(){ //возвращает массив друзей, которые не учавствуют в беседе
     $friends = unserialize($_SESSION['logged_user']['friends']);
@@ -42,12 +36,7 @@ function getFriendsNotInGroup(){ //возвращает массив друзе�
     }
     return $friends_not_in_group;
 }
-function addMember($member='member', $method='POST'){ //добавляет выбранного друга в беседу
-    if($method === 'POST'){
-        $member = $_POST["$member"];
-    }else if($method === 'GET'){
-        $member = $_GET["$member"];
-    }
+function addMember($member){ //добавляет выбранного друга в беседу
     if(!is_null($member)){
         $group = ORM::Read_one('groups', 'id=?', [$_GET['room_id']]);
         $group_party_arr = unserialize($group['party']);
@@ -74,7 +63,7 @@ function addMember($member='member', $method='POST'){ //добавляет вы�
 }
 
 if(isset($_POST['doGoAddMessage'])){
-    addMessage();
+    addMessage($_POST['text']);
     //обновляем информацию о последнем сообщении, отправленном в беседе или диалоге если существует 
     if(ORM::Exists('messages', 'room_id=? AND room_type=? ORDER BY pubdate DESC', [$_GET['room_id'], $_GET['room_type']])){
         $last_message = ORM::Read_one('messages', 'room_id=? AND room_type=? ORDER BY pubdate DESC', [$_GET['room_id'], $_GET['room_type']]);
@@ -92,6 +81,23 @@ if(isset($_POST['doGoDeleteMessage'])){
     App::refresh();
 }
 if(isset($_POST['doGoAddMember'])) { 
-    addMember();
+    addMember($_POST['member']);
     App::refresh();
-} 
+}
+
+$dialog = ORM::Read('messages',
+    'room_id=? AND room_type=? ORDER BY pubdate DESC LIMIT 50',
+    [$_GET['room_id'], $_GET['room_type']]
+);
+
+if($_GET['room_type'] === 'group'){
+    $groups_id = unserialize($_SESSION['logged_user']['groups_id']);
+    foreach ($groups_id as &$v) {
+        if($v[0] == $_GET['room_id']){
+            $v[1] = date('Y-m-d H:i:s');
+            break;
+        }
+    }
+    $_SESSION['logged_user']['groups_id'] = serialize($groups_id);
+    ORM::Update('users', 'groups_id=?', 'id=?', [$_SESSION['logged_user']['groups_id'], $_SESSION['logged_user']['id']]);
+}
