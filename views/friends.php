@@ -14,9 +14,12 @@ require_once '../includes/top_panel.php';
 			<div class="friend_list main_cont">
 				<p>List of your friends:</p>
 				<ul>
-					<?php
-					foreach ($friends as $v) { ?>
-						<li><a href="main_page.php?id=<?=$v[1]?>"><?=$v[0]?> <em>#<?=$v[1]?></em></a></li>
+                    <?php foreach ($friends as $one_friend) { ?>
+						<li>
+                            <a href="main_page.php?id=<?=$one_friend[1]?>">
+                                <?=$one_friend[0]?> <em>#<?=$one_friend[1]?></em>
+                            </a>
+                        </li>
 					<?php } ?>
 				</ul>
 			</div>

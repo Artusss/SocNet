@@ -2,7 +2,12 @@
 require_once '../includes/model.php';
 
 //регистрирует пользователя
-function signUp($login, $email, $password, $password_2){
+function signUp(){
+    $login      = $_POST['login'];
+    $email      = $_POST['email'];
+    $password   = $_POST['password'];
+    $password_2 = $_POST['password_2'];
+
 	$errors = array();
 
 	if(trim($login) == ''){
@@ -29,11 +34,11 @@ function signUp($login, $email, $password, $password_2){
 	}
 
 	if(empty($errors)){
-		//хешируем пароль перед записью в БД
+		//хешируем пароль пере записью в БД
 		$password = password_hash($password, PASSWORD_DEFAULT);
 		ORM::Create('users', [
-			'login' => $login, 
-			'email' => $email,
+			'login'    => $login,
+			'email'    => $email,
 			'password' => $password
 		]
 	);
@@ -43,12 +48,15 @@ function signUp($login, $email, $password, $password_2){
 	}
 }
 $err_message = '';
+
 if(isset($_POST['doGoSignUp'])){
-	if(signUp($_POST['login'], $_POST['email'], $_POST['password'], $_POST['password_2']) === true){
-		signUp($_POST['login'], $_POST['email'], $_POST['password'], $_POST['password_2']);
-		header("Location: ../index.php");
-		exit();
-	}else{
-		$err_message = signUp($_POST['login'], $_POST['email'], $_POST['password'], $_POST['password_2'])."<hr>";
-	}
+    if(signUp() === true){
+        signUp();
+        header("Location: ../index.php");
+        exit();
+    }else{
+        $err_message = signUp()."<hr>";
+    }
 }
+
+

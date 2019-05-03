@@ -34,6 +34,7 @@ $count = [
 <div class="left_panel">
 	<ul>
         <li><a href="main_page.php?id=<?=$_SESSION['logged_user']['id']?>"><i class="fas fa-home"></i> My Page</a></li>
+        <li><a href="news.php"><i class="fas fa-newspaper"></i> News</a></li>
         <li><a href="friends.php"><i class="fas fa-users"></i> Friends <span class="counter"><?=$count['friend']?></span></a></li>
         <li><a href="dialogs.php"><i class="fas fa-comments"></i> Dialogs <span class="counter"><?=$count['dialogs']?></span></a></li>
         <li><a href="notices.php"><i class="fas fa-envelope"></i> Notices <span class="counter"><?=$count['notice']?></span></a></li>

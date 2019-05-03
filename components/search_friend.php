@@ -2,8 +2,8 @@
 require_once '../includes/model.php';
 
 //возвращает массив пользователей по совпадению с введенными данными
-function searchFriend($friend_login){
-	$friend_login = trim($friend_login);
+function searchFriend(){
+	$friend_login = trim($_POST['friend_login']);
 
 	$founded_user = array();
 	if($friend_login !== ''){	
@@ -17,8 +17,10 @@ function searchFriend($friend_login){
 	return $founded_user;
 }
 
-if(isset($_POST['doGoSearchFriend'])){
-	$founded_user = searchFriend($_POST['friend_login']);
+if(isset($_SESSION['logged_user'])){
+    if(isset($_POST['doGoSearchFriend'])){
+        $founded_user = searchFriend();
+    }
 }
 
 

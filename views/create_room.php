@@ -20,10 +20,10 @@ require_once '../includes/top_panel.php';
 					Выберите участников:<br/>
 					<ul>
 						<?php 
-						foreach($friends as $fr){ ?>
+						foreach($friends as $one_friend){ ?>
 							<li>
-								<label for="party[]"><?=$fr[0]?></label>
-								<input type="checkbox" name="party[]" value="<?=$fr[0]?>">
+								<label for="party[]"><?=$one_friend[0]?></label>
+								<input type="checkbox" name="party[]" value="<?=$one_friend[0]?>">
 							</li>
 						<?php }	?>
 					</ul>	

@@ -1,7 +1,7 @@
 <?php
 class App
 {
-	static public function refresh(){ //редиректит страницу 
+	static public function refresh(){ //self-redirect
 		$id = time();
 		header("Location: http://{$_SERVER['SERVER_NAME']}{$_SERVER['SCRIPT_NAME']}?{$_SERVER['QUERY_STRING']}&{$id}");
 		exit;

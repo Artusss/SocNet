@@ -4,8 +4,8 @@ body{
 	color: #2b2b2b;
 }
 .top_panel{
-	color: #666;
-	background-color: #ccc;
+	color: #ffffee;
+	background-color: #7ba6d4;
 }
 .top_panel .logotype{
 	font-size: 40px;
@@ -22,9 +22,9 @@ body{
 	text-align: center;
 }
 .top_panel a{
-	color: #666;
-  text-decoration: none;
-  border-bottom: none;
+	color: #ffffee;
+  	text-decoration: none;
+  	border-bottom: none;
 }
 /*includes\top_panel.php*/
 
@@ -86,6 +86,9 @@ body{
 	padding: 0;
 	list-style-type: none;
 }
+.user_info{
+	padding: 0 0 10px;
+}
 .user_info ul li{
 	font-size: 25px;
 	display: block;
@@ -104,9 +107,9 @@ body{
 	max-width: 100%;
 }
 .user_about {
-	font-size: 20px;
+	font-size: 17px;
 	display: block;
-	padding: 10px 20px;
+	padding: 5px 20px;
 	text-decoration: none;
 	border-bottom: none;
 }
@@ -118,6 +121,43 @@ body{
 	text-decoration: none;
 	color: #2b2b2b;
 	border: none;
+}
+.record{
+	padding: 10px 15px;
+	font-size: 20px;
+}
+.show_comments a{
+	margin-right: 10px;
+	float: right;
+}
+.hide_comments a{
+	border-radius: 10px;
+	padding: 0 4px;
+	float: right;
+	background-color: #DDDDDD;
+}
+.create_record p{
+	font-size: 20px;
+	margin: 15px 15px 0;
+}
+.create_record input, .create_comment input{
+	display: block;
+	width: 100%;
+	margin: 10px 15px 0;
+	border-radius: 10px;
+	padding: 0 7px 10px;
+}
+.create_record button, .create_comment button{
+	border-radius: 10px;
+	padding: 5px 10px;
+	margin: 10px 0;
+	margin-bottom: 0 15px;
+	text-decoration: none;
+	color: #2b2b2b;
+	border: none;
+}
+.comments{
+	padding: 5px 50px 0 10px;
 }
 /*main_page.php*/
 
@@ -324,7 +364,7 @@ body{
 
 /*search_friend.php*/
 .founded_users{
-		margin-top: 20px; 
+	margin-top: 20px;
 }
 .founded_users ul{
 	color: #2b2b2b;

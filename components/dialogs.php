@@ -5,8 +5,8 @@ function checkRoom($party){ //возвращает true если диалог с
 	$check_room = ORM::Exists('message_room', 'party=? ', [$party]);
 	return $check_room ? true : false;
 }
-function sortDB(&$arr, $col){ //сортирует таблицу по дате
-	$sort_var = array_column($arr, $col);
+function sortDB_date(&$arr, $date){ //сортирует таблицу по дате
+	$sort_var = array_column($arr, $date);
 	foreach ($sort_var as &$v){
 		$v = strtotime($v);
 	}
@@ -37,7 +37,7 @@ function getRooms(){ //возвращает массив со всеми диа�
 				$dialogs[] = $grp;
 			}
 		}
-		sortDB($dialogs, 'last_message_date');
+		sortDB_date($dialogs, 'last_message_date');
 	}
 	return $dialogs;
 }
